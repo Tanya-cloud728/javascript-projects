@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+          font-size: 50px;
+          font-style: italic;
+          text-align: center;
+          margin: 20px;   
+          font-family: Arial, Helvetica, sans-se;                     
+        }
+        button{
+            padding: 10px 20px;
+            font-size: 40px;
+            border-radius: 8px;
+            border: none;
+            background-color: rgb(212, 62, 79);
+            color: brown;
+            cursor: pointer;
+            margin: 50px;
+        }
+        button:hover{
+            background-color: aquamarine;
+            transition: 0.2;
+        }
+        body{
+            background-color: rgb(202, 188, 193);
+            margin: 200px;
+            width: 800px;
+            font-weight: bolder;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 5px gray;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="count">0<h1>
+    
+    <button id="plus">+</button> <br><br>
+    <button id="minus">-</button> <br><br>
+    <button id="reset">reset</button>
+    <!-- <script>
+        let element = document.getElementById("count");
+        element.textContent = "5";
+    </script> -->
+    <script>
+        let count=document.getElementById("count");             //DOM syntax
+        let plus=document.getElementById("plus");
+        let minus=document.getElementById("minus");
+        let reset=document.getElementById("reset");
+        let counter=0;
+      function update(){
+            count.textContent=counter;
+        }
+        plus.addEventListener("click",function(){
+            counter++;
+            update();
+            // count.textContent=counter;
+
+        });
+        minus.addEventListener("click",function(){
+            if(counter>0){
+            counter--;
+        }
+        update()
+            // count.textContent=counter;
+
+        });
+reset.addEventListener("click",function(){
+            counter=0;
+            update()
+            // count.textContent=counter;
+
+        });
+
+    </script>
+    
+</body>
+</html>
