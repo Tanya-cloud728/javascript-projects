@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random</title>
+    <h1> RANDOM QUOTE GENERATOR</h1>
+    <style>
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: rgb(164, 122, 122);
+    }
+
+    h1 {
+        color: rgb(13, 8, 8);
+        margin-bottom: 30px;
+    }
+
+    #quote {
+        background-color: rgb(55, 33, 33);
+        color: rgb(215, 121, 121);
+        padding: 30px;
+        width: 500px;
+        max-width: 80%;
+        text-align: center;
+        border-radius: 15px;
+        font-size: 24px;
+        line-height: 1.5;
+    }
+
+    #author {
+        color: #140909;
+        font-size: 18px;
+        margin-top: 15px;
+        font-style: italic;
+    }
+
+    #newQuote {
+        margin-top: 20px;
+        padding: 12px 25px;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        background-color: white;
+        color: #111;
+        transition: 0.3s;
+    }
+
+    #newQuote:hover {
+        transform: scale(1.05);
+    }
+</style>
+</head>
+<body>
+    <h2 id="quote"></h2>
+    <h2 id="author"></h2>
+    <button id="newQuote">New quote</button>
+    <script>
+        let quotes=[{
+            quote:"The only way to do greatwork is to love what you do!!",
+            Author:"Steve Jobs"
+        },
+    { 
+        quote:"It always seems impossible until its done!!",
+        Author:"Nelson Mandela"
+    },
+{
+    quote:"Success is the some of all efforts,repeated day in and day out!!",
+    Author:"Robert Collier"
+}]
+let quoteEle=document.getElementById("quote");
+let authorEle=document.getElementById("author");
+let newQuote=document.getElementById("newQuote")
+newQuote.addEventListener("click",function(){
+    randomquote();
+});
+function randomquote(){
+    let randomIndex=Math.floor(Math.random()*quotes.length)
+    let randomQuote=quotes[randomIndex];
+    quoteEle.textContent=randomQuote.quote;
+    authorEle.textContent=randomQuote.Author;
+
+}
+
+    </script>
+</body>
+</html>
