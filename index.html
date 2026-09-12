@@ -1,18 +1,135 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
 <head>
-    <title>JavaScript Projects</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>My JavaScript Projects</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #0f172a, #1e293b);
+        color: white;
+        min-height: 100vh;
+        padding: 60px 20px;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: auto;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 48px;
+        margin-bottom: 15px;
+    }
+
+    .subtitle {
+        color: #94a3b8;
+        font-size: 18px;
+        margin-bottom: 50px;
+    }
+
+    .projects {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 25px;
+    }
+
+    .card {
+        background: rgba(255, 255, 255, 0.08);
+        padding: 30px 20px;
+        border-radius: 18px;
+        text-decoration: none;
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-8px);
+        background: rgba(255, 255, 255, 0.15);
+    }
+
+    .emoji {
+        font-size: 45px;
+        margin-bottom: 20px;
+    }
+
+    .card h2 {
+        margin-bottom: 10px;
+    }
+
+    .card p {
+        color: #cbd5e1;
+        font-size: 14px;
+    }
+
+    footer {
+        margin-top: 60px;
+        color: #64748b;
+        font-size: 14px;
+    }
+</style>
+```
+
 </head>
+
 <body>
 
-    <h1>My JavaScript Projects</h1>
+```
+<div class="container">
 
-    <ul>
-        <li><a href="counter-app/">Counter App</a></li>
-        <li><a href="color changer/">Color Changer</a></li>
-        <li><a href="digital-clock/">Digital Clock</a></li>
-        <li><a href="random.quote/">Random Quote Generator</a></li>
-    </ul>
+    <h1>My JavaScript Projects 🚀</h1>
+
+    <p class="subtitle">
+        A collection of projects built while learning JavaScript.
+    </p>
+
+    <div class="projects">
+
+        <a href="counter-app/" class="card">
+            <div class="emoji">🔢</div>
+            <h2>Counter App</h2>
+            <p>Simple counter using JavaScript DOM manipulation.</p>
+        </a>
+
+        <a href="color changer/" class="card">
+            <div class="emoji">🎨</div>
+            <h2>Color Changer</h2>
+            <p>Change the background color randomly.</p>
+        </a>
+
+        <a href="digital-clock/" class="card">
+            <div class="emoji">⏰</div>
+            <h2>Digital Clock</h2>
+            <p>A real-time digital clock built with JavaScript.</p>
+        </a>
+
+        <a href="random.quote/" class="card">
+            <div class="emoji">💭</div>
+            <h2>Random Quote</h2>
+            <p>Generate a random motivational quote.</p>
+        </a>
+
+    </div>
+
+    <footer>
+        Built with HTML, CSS & JavaScript ❤️
+    </footer>
+
+</div>
+```
 
 </body>
 </html>
