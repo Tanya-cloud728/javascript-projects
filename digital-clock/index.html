@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>digitalClock</title>
+    <style>
+        body{
+            display:flex;
+            flex-direction: column;
+             justify-content: center; 
+             background-color: rgb(247, 219, 224);
+             font-family: Arial,sans-serif;
+             height:100vh;
+             align-items: center;
+             
+        }
+        h1{
+            font-size:xx-large;
+            letter-spacing: 2px;
+            font-style: italic;
+            text-shadow: 0 0 7px rgb(214, 76, 99);
+            margin-bottom: 10px;
+            background-color: rgb(230, 190, 130);
+            padding: 10px 20px;
+            border-radius: 40px;
+            color: #f1ecec;
+            box-shadow: #d2a0d0;
+        }
+        h2{
+            font-size: 60px;
+            font-style: italic;
+            letter-spacing: 4px;
+            font-family: monospace;
+            color:rgb(245, 202, 234);
+            text-shadow: 0 0 10px rgb(152, 68, 68);
+            background-color: rgb(123, 126, 95);
+             padding: 20px 30px; 
+             border-radius:70px ;
+             box-shadow: 0 0 20px rgb(238, 13, 148);
+            border: 1px solid #d2a0d0;
+            margin-top: 10px;
+            transition: 0.2s;
+            max-width: 90%;
+        }
+        h2:hover{
+            transform: scale(1.05);
+        }
+        @media (max-width: 600px) {
+    h2 {
+        font-size: 40px;
+    }
+}
+    </style>
+</head>
+<body>
+    <h1>DIGITAL CLOCK</h1>
+    <h2 id="clock"></h2>
+    <script>
+         let dc=document.getElementById("clock");
+    setInterval(function(){
+          let ampm;
+     
+         let now=new Date();
+          let minute=now.getMinutes();
+     let hours=now.getHours();
+     let seconds=now.getSeconds();
+     if(hours>12){
+        hours-=12;
+     }
+     else if(hours===0){
+        hours=12;
+     }
+     
+     if(hours>=12){
+        ampm="PM";
+     }
+        else{
+            ampm="AM";
+        }
+     
+     dc.textContent=hours.toString().padStart(2,"0")+":"+minute.toString().padStart(2,"0")+":"+seconds.toString().padStart(2,"0")+" "+ampm;
+     },1000);
+
+    </script>
+
+    
+    
+</body>
+</html>
