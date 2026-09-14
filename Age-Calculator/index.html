@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #430b0b;
+    font-family: Arial, sans-serif;
+}
+
+.calculator {
+    width: 450px;
+    padding: 45px;
+    background-color: #0e0707;
+    border-radius: 24px;
+    box-shadow: 0 15px 35px #ed0404;
+    text-align: center;
+}
+
+.calculator h1 {
+    margin-bottom: 30px;
+    color: #8d4622;
+    font-size: 32px;
+}
+
+.calculator input {
+    display: block;
+    width: 100%;
+    height: 55px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #f8efe5;
+    color: #3b2418;
+    border: 2px solid #c9a98b;
+    border-radius: 12px;
+    font-size: 16px;
+}
+
+.calculator input:focus {
+    outline: none;
+    border-color: #7b4b32;
+}
+
+.calculator button {
+    display: block;
+    width: 100%;
+    height: 55px;
+    background-color: #6f432a;
+    color: #fffaf3;
+    border: none;
+    border-radius: 12px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.calculator button:hover {
+    background-color: #4b2e20;
+}
+
+#result {
+    margin-top: 30px;
+    color: #ddc9c0;
+    font-size: 28px;
+    font-weight: bold;
+}
+</style>
+<body>
+    <div class="calculator">
+
+        <h1>Age Calculator</h1>
+
+        <input type="date" id="dob">
+
+        <button id="calculate">Calculate Age</button>
+
+        <h2 id="result"></h2>
+
+    </div>
+        <script>
+       let calculate=document.getElementById("calculate")
+       calculate.addEventListener("click",function(){
+ let dob=document.getElementById("dob").value
+       let birthDate=new Date(dob);
+       let current_date=new Date();
+       let BirthYear=birthDate.getFullYear();
+       let CurrentYear=current_date.getFullYear();
+       let BirthMonth=birthDate.getMonth();
+       let CurrentMonth=current_date.getMonth();
+       let BirthDay=birthDate.getDate();
+       let CurrentDate=current_date.getDate();
+       let age=CurrentYear-BirthYear;
+       if(CurrentMonth<BirthMonth || (CurrentMonth===BirthMonth && currentDate<BirthDay)){
+        age-=1;
+
+       }
+        let result=document.getElementById("result");
+    result.textContent=age;
+       })
+      
+    </script>
+</body>
+</html>
