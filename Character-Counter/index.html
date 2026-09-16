@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4e1c40;
+    font-family: Arial, sans-serif;
+}
+
+.counter {
+    width: 550px;
+    padding: 45px;
+    background-color: #ee7fee;
+    border: 3px solid #9d0db7;
+    border-radius: 18px;
+    text-align: center;
+
+    /* NEW CONCEPT */
+    box-shadow: 12px 12px 0px #3f0251;
+}
+
+.counter h1 {
+    margin-bottom: 25px;
+    color: #321b0f;
+    font-size: 34px;
+}
+
+textarea {
+    width: 100%;
+    height: 180px;
+    padding: 18px;
+    resize: none;
+
+    background-color: #fffdf8;
+    color: #21150f;
+
+    border: 2px solid #321b0f;
+    border-radius: 12px;
+
+    font-size: 17px;
+    font-family: inherit;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #8b5e3c;
+}
+
+.counter p {
+    margin-top: 22px;
+    color: #5a3a28;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.counter h2 {
+    margin-top: 6px;
+    color: #321b0f;
+    font-size: 30px;
+}
+</style>
+
+<body>
+  <div class="counter">
+    <h1>Character Counter</h1>
+
+    <textarea id="para" placeholder="Type or paste your text here..."></textarea>
+
+    <p>Characters</p>
+    <h2 id="result"></h2>
+
+    <p>Characters without spaces</p>
+    <h2 id="result1"></h2>
+</div>
+    <script>
+        let para=document.getElementById("para");
+        para.addEventListener("input",function(){
+             let ans=para.value.replaceAll(" ","");
+           let result=document.getElementById("result");
+           result.textContent=ans.length;
+           let result1=document.getElementById("result1")
+           result1.textContent=para.value.length;
+        })
+    </script>
+</body>
+</html>
